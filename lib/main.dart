@@ -24,6 +24,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Praktikum Layout Flutter"),
+      ),
+      body: Text('something'),
+    );
   }
 }
