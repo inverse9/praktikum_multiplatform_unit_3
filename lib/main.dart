@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Icon(
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          Column(
+          const Column(
             children: [
               ListTile(
                 title: Text("Nama"),
