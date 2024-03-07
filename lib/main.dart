@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "FLutter Layout Praktikum",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: HomePage(),
     );
@@ -28,13 +28,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Praktikum Layout Flutter"),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Container(color: Colors.red, height: 100, width: 100),
-          Container(color: Colors.green, height: 50, width: 100),
-          Container(color: Colors.blue, height: 80, width: 100)
+          Container(color: Colors.green, height: 50, width: 50),
+          Container(color: Colors.blue, height: 80, width: 80)
         ],
       ),
     );
