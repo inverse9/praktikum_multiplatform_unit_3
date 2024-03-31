@@ -30,148 +30,183 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Unit 2: Profil pengguna",
-          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "Unit 2: Profil pengguna",
+            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          ),
+          centerTitle: true,
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                text: "Home",
+              ),
+              Tab(
+                text: "Profile",
+              )
+            ],
+          ),
         ),
-        centerTitle: true,
+        body: TabBarView(
+          children: [Dashboard(), Profile()],
+        ),
       ),
-      body: ListView(
-        children: [
-          Image.network(
-            "https://staticg.sportskeeda.com/editor/2021/07/67350-16257407612574-800.jpg",
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Icon(
-                Icons.copy,
+    );
+  }
+}
+
+class Dashboard extends StatelessWidget {
+  const Dashboard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+class Profile extends StatelessWidget {
+  const Profile({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Image.network(
+          "https://staticg.sportskeeda.com/editor/2021/07/67350-16257407612574-800.jpg",
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Icon(
+              Icons.copy,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(
+              Icons.share,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(
+              Icons.info,
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            ListTile(
+              title: Text(
+                "Nama",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(
-                width: 10,
+              subtitle: Text(
+                "Bob",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              Icon(
-                Icons.share,
+            ),
+            ListTile(
+              title: Text(
+                "Umur",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(
-                width: 10,
+              subtitle: Text(
+                "30",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              Icon(
-                Icons.info,
+            ),
+            ListTile(
+              title: Text(
+                "Alamat",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-            ],
-          ),
-          Column(
-            children: [
-              ListTile(
-                title: Text(
-                  "Nama",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Bob",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+              subtitle: Text(
+                "Panjer no 203",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              ListTile(
-                title: Text(
-                  "Umur",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "30",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+            ),
+            ListTile(
+              title: Text(
+                "Hobi",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              ListTile(
-                title: Text(
-                  "Alamat",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Panjer no 203",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+              subtitle: Text(
+                "Olahraga",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              ListTile(
-                title: Text(
-                  "Hobi",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Olahraga",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+            ),
+            ListTile(
+              title: Text(
+                "NIK",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              ListTile(
-                title: Text(
-                  "NIK",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "572883919922233",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+              subtitle: Text(
+                "572883919922233",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              ListTile(
-                title: Text(
-                  "Zodiak",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Cancer",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+            ),
+            ListTile(
+              title: Text(
+                "Zodiak",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              ListTile(
-                title: Text(
-                  "Makanan favorit",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Bakso",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+              subtitle: Text(
+                "Cancer",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              ListTile(
-                title: Text(
-                  "Minuman favorit",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Bir",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+            ),
+            ListTile(
+              title: Text(
+                "Makanan favorit",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-              ListTile(
-                title: Text(
-                  "Cita cita",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "Pilot",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+              subtitle: Text(
+                "Bakso",
+                style: Theme.of(context).textTheme.labelMedium,
               ),
-              ListTile(
-                title: Text(
-                  "Pekerjaan",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                subtitle: Text(
-                  "mahasiswa",
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+            ),
+            ListTile(
+              title: Text(
+                "Minuman favorit",
+                style: Theme.of(context).textTheme.titleLarge,
               ),
-            ],
-          )
-        ],
-      ),
+              subtitle: Text(
+                "Bir",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+            ListTile(
+              title: Text(
+                "Cita cita",
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              subtitle: Text(
+                "Pilot",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+            ListTile(
+              title: Text(
+                "Pekerjaan",
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              subtitle: Text(
+                "mahasiswa",
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 }
