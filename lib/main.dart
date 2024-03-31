@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +14,11 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "FLutter Layout Praktikum",
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Theme.of(context).colorScheme.primary,
+        ),
       ),
       home: const HomePage(),
     );
@@ -26,8 +32,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Unit 2: Profil pengguna"),
-        backgroundColor: const Color.fromARGB(255, 100, 219, 104),
+        title: Text(
+          "Unit 2: Profil pengguna",
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        ),
         centerTitle: true,
       ),
       body: ListView(
@@ -58,47 +66,107 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          const Column(
+          Column(
             children: [
               ListTile(
-                title: Text("Nama"),
-                subtitle: Text("Bob"),
+                title: Text(
+                  "Nama",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Bob",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Umur"),
-                subtitle: Text("30"),
+                title: Text(
+                  "Umur",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "30",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Alamat"),
-                subtitle: Text("Panjer no 203"),
+                title: Text(
+                  "Alamat",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Panjer no 203",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Hobi"),
-                subtitle: Text("Olahraga"),
+                title: Text(
+                  "Hobi",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Olahraga",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("NIK"),
-                subtitle: Text("572883919922233"),
+                title: Text(
+                  "NIK",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "572883919922233",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Zodiak"),
-                subtitle: Text("Cancer"),
+                title: Text(
+                  "Zodiak",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Cancer",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Makanan favorit"),
-                subtitle: Text("Bakso"),
+                title: Text(
+                  "Makanan favorit",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Bakso",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Minuman favorit"),
-                subtitle: Text("Bir"),
+                title: Text(
+                  "Minuman favorit",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Bir",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Cita cita"),
-                subtitle: Text("Pilot"),
+                title: Text(
+                  "Cita cita",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "Pilot",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
               ListTile(
-                title: Text("Pekerjaan"),
-                subtitle: Text("mahasiswa"),
+                title: Text(
+                  "Pekerjaan",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                subtitle: Text(
+                  "mahasiswa",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
               ),
             ],
           )
